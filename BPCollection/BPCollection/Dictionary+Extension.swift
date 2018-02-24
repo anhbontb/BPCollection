@@ -11,7 +11,7 @@ import Foundation
 //MARK: - Dictionary
 
 extension Dictionary where Value == Any {
-    func value<T>(forKey key: Key, defaultValue: @autoclosure () -> T) -> T {
+    public func value<T>(forKey key: Key, defaultValue: @autoclosure () -> T) -> T {
         guard let value = self[key] as? T else {
             return defaultValue()
         }
