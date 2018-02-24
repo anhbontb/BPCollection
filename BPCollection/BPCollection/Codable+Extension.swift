@@ -8,9 +8,9 @@
 
 import Foundation
 
-public protocol CodableExtensionProtocol {}
+public protocol BPCodable: Codable {}
 
-extension CodableExtensionProtocol where Self: Codable  {
+extension BPCodable where Self: Any  {
     
     public func toData() -> Data? {
         return try? JSONEncoder().encode(self)
